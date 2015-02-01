@@ -20,8 +20,16 @@
   </servlet>
   
   
+    <!-- Formato da extensao -->
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>*.jsf</url-pattern>
   </servlet-mapping>
+  
+  
+  <!-- Tema escolhido da aplicação -->
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>hot-sneaks</param-value>
+	</context-param>	
 </web-app>
