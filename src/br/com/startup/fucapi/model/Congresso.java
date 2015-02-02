@@ -16,15 +16,16 @@ public class Congresso {
 	private String nome;
 	private String categoria;
 	private String descricao;
+	private Integer vagas;
 	private Date data_inicio;
 	private String hora_icnio;
 	private Date data_fim;
 	private String hora_fim;
-	private String local;
+	private String endereco;
 	private Double valor;
-	private Cadastro cadastro;
-	
-	
+	private Cadastro cadastro = new Cadastro();
+	private Local local = new Local();
+
 	/**
 	 * @return the id
 	 */
@@ -124,14 +125,14 @@ public class Congresso {
 	/**
 	 * @return the local
 	 */
-	public String getLocal() {
-		return local;
+	public String getEndereco() {
+		return endereco;
 	}
 	/**
 	 * @param local the local to set
 	 */
-	public void setLocal(String local) {
-		this.local = local;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 	/**
 	 * @return the cadastro
@@ -156,6 +157,18 @@ public class Congresso {
 	 */
 	public void setValor(Double valor) {
 		this.valor = valor;
+	}
+	public Integer getVagas() {
+		return vagas;
+	}
+	public void setVagas(Integer vagas) {
+		this.vagas = vagas;
+	}
+	public Local getLocal() {
+		return local;
+	}
+	public void setLocal(Local local) {
+		this.local = local;
 	}
 	
 	
