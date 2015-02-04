@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/template/t_login.xhtml">
+		
+		<ui:define name="centro">
+	
+		<h:form id="autenticar">
+			<p:fieldset  class="field-login" legend="Login" toggleable="true"   >
+			
+			<p:messages id="mensagem" closable="true" autoUpdate="true" />
+			
+			<p:spacer height="20px"/>
+			
+				<h:panelGrid  columns="2" cellpadding="6">
+					<h:graphicImage   url="/resources/images/login/user.png" />
+					<p:inputText  
+						class="input-login"
+						size="24" 
+						maxlength="50" 
+						required="true"
+						requiredMessage="Digite seu email"
+						validatorMessage="Insira o email cadastrado"
+						placeholder="E-mail"
+						autocomplete="false"
+						value="#{autenticarBean.organizador.cadastro.emailCadastro}">
+						</p:inputText>
+					
+					<h:graphicImage url="/resources/images/login/key.png" />
+					
+					<p:password 
+						class="input-login"
+						size="24"
+						maxlength="15" 
+						required="true"
+						requiredMessage="Digite sua senha"
+						placeholder="Senha"
+						value="#{autenticarBean.organizador.cadastro.senha}">
+					</p:password>
+				</h:panelGrid>
+
+				<h:panelGrid  columns="2" cellpadding="6">
+					<h:graphicImage url="/resources/images/login/check.png" />
+					<p:commandButton  id="save"
+						value="Entrar" 
+						class ="btextende"
+						action="#{autenticarBean.logar}" />
+				</h:panelGrid>
+				<br></br>
+				<h:commandLink  immediate="true"  class="recuperar"  >Esqueceu sua senha?</h:commandLink>
+				<p:spacer height="40px"/>
+		
+			</p:fieldset>	
+				
+		</h:form>
+		
+	</ui:define>
+	
+	<ui:define name="rodape">
+		<ui:include src="/include/rodape.xhtml"></ui:include>
+	</ui:define>
+</ui:composition>
+</html>
